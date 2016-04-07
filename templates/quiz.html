@@ -1,0 +1,31 @@
+<html>
+    
+    <title> Voting App</title>
+     <form action="/home/",method="post">{% csrf_token %}
+        <input type="submit" value="Home">
+    </form>
+  
+    <form action="/logout/",method="post">{% csrf_token %}
+        <input type="submit" value="Logout">
+    </form>
+    
+     <h1>
+        Please give your vote
+    </h1>
+    <body>
+    
+        <p>Question:
+        {{ params.question }}</p> 
+        <form action="/ques-success/" method="post">{% csrf_token %}
+            <input type="radio" name="choices" id="option1">
+            <label for="option1">{{ params.option1 }}</label><br>
+            <input type="radio" name="choices" id="option2">
+            <label for="option2">{{ params.option2 }}</label><br>
+            <input type="radio" name="choices" id="option3">
+            <label for="option3">{{ params.option3 }}</label><br>
+            <input type="radio" name="choices" id="option4">
+            <label for="option4">{{ params.option4 }}</label><br>
+            <input type="submit" value="vote">
+        </form>     
+    </body>
+</html>

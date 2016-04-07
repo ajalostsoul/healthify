@@ -1,0 +1,31 @@
+<html>
+    
+    <title> Voting App</title>
+     <form action="/home/",method="post">{% csrf_token %}
+        <input type="submit" value="Home">
+    </form>
+  
+    <form action="/logout/",method="post">{% csrf_token %}
+        <input type="submit" value="Logout">
+    </form>
+    
+     <head>
+        <p style="color: green;font-weight:bold;font-size: large">Thanks for voting,Lets ask others also</p>
+     </head>
+        
+    <body>
+        <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=819080934892887";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <p>Share the following link to your friends or share on fb</p>
+    <p><a href='http://localhost:8000/home/'>http://localhost:8000/home/</a></p>
+    <div class="fb-share-button" data-href="http://healthifyme.com/home/" data-layout="button"></div>
+    </body>
+    
+</html>

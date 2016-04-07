@@ -1,0 +1,25 @@
+<html>
+    <head>     
+    </head>
+    <title> Voting App</title>
+    <form action="/home/",method="post">
+        <input type="submit" value="Home">
+    </form>
+    <body>
+        <h1>Enter the Question:</h1>
+       <form action="/quiz-success/" id="quizform" method="post">{% csrf_token %}
+            <p>Question:
+            <br>
+            <textarea rows="8" cols="50" name="formquestion" form="quizform" autocomplete="off" maxlength="300">{{ quizform }}</textarea> <span style="color:red;font-weight:bold">{{ errors.quizform }}</span></p>
+            <p>Title:    <input type="text" autocomplete="off" name="title" value="{{ title }}" maxlength="60"></p><span style="color:red;font-weight:bold">{{ errors.title }}</span></p>
+            <p>Option1:  <input type="text" autocomplete="off" name="option1" value="{{ option1 }}" maxlength="60"></p><span style="color:red;font-weight:bold">{{ errors.option1 }}</span></p>
+            <p>Option2:  <input type="text" autocomplete="off" name="option2" value="{{ option2 }}" maxlength="60"></p><span style="color:red;font-weight:bold">{{ errors.option2 }}</span></p>
+            <p>Option3:  <input type="text" autocomplete="off" name="option3" value="{{ option3 }}" maxlength="60"></p><span style="color:red;font-weight:bold">{{ errors.option3 }}</span></p>
+            <p>Option4:  <input type="text" autocomplete="off" name="option4" value="{{ option4 }}" maxlength="60"></p><span style="color:red;font-weight:bold">{{ errors.option4 }}</span></p>
+            
+            <input type="submit" value="ADD">
+        </form> 
+        
+        
+    </body>
+</html>

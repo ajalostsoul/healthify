@@ -1,0 +1,16 @@
+<html>
+    <head>     
+    </head>
+    <title> Voting App </title>
+    <form action="/home/",method="post">
+        <input type="submit" value="Home">
+    </form>
+    <body>
+        <h1>Please Enter your Admin email</h1>
+       <form action="/validate/" method="post">{% csrf_token %}
+       <p>Admin Email ID: <input type="text" autocomplete="off" name="adminemail" value="{{ adminemail }}"><span style="color:red;font-weight:bold"> {{ errors.adminemail }}{{ msg }}</span></p>
+       <input type="submit" value="login"> 
+       </form> 
+        
+    </body>
+</html>

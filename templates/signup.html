@@ -1,0 +1,35 @@
+<html>
+    
+    <title> Voting App</title>
+    <form action="/home/",method="post">{% csrf_token %}
+        <input type="submit" value="Home">
+    </form>
+    
+    {% if registered %}
+        <form action="/logout/",method="post">{% csrf_token %}
+            <input type="submit" value="Logout">
+        </form>
+    {% endif %}
+    
+    <head>
+        <p style="color: green;font-weight:bold;font-size: large">{{ quizmsg }}</p>
+        <p style="color: red;font-weight:bold;font-size: large">{{ quesmsg }}</p>
+    </head>
+    
+    <body>
+        <h1>Please Login/SignUp to give vote</h1>
+        
+        <form action="/success/" method="post">{% csrf_token %}
+            <p>First Name: <input type="text" autocomplete="off" name="firstname" value="{{ firstname }}" maxlength="10"> <span style="color:red;font-weight:bold">{{ errors.firstname }}</span></p>
+            <p>Last Name:  <input type="text" autocomplete="off" name="lastname" value="{{ lastname }}" maxlength="10"></p>
+            <p>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" autocomplete="off" name="email" value="{{ email }}"><span style="color:red;font-weight:bold"> {{ errors.email }}{{ msg }}</span></p>
+            <input type="submit" value="SignUp">
+        </form>
+        
+        <form action="/quiz-authenticate/" method="post">{% csrf_token %}
+            <input type="submit" value="Create Question"> &nbsp;(Only for authenticated users)
+        </form>
+        
+        
+    </body>
+</html>
