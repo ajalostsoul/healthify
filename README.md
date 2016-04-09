@@ -19,3 +19,4 @@ Testcases and scenarios covered:<br>
 6. Apt msgs should be displayed on errors.<br>
 7. Kindly explore the app to know more.<br>
 
+I didnt use django's form class as i wanted to do everything by own and didnt want to be confused what could be happening inside the class.
