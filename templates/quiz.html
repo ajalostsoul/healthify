@@ -17,13 +17,13 @@
         <p>Question:
         {{ params.question }}</p> 
         <form action="/ques-success/" method="post">{% csrf_token %}
-            <input type="radio" name="choices" id="option1">
+            <input type="radio" name="choices" id="option1" value={{ params.option1 }} checked>
             <label for="option1">{{ params.option1 }}</label><br>
-            <input type="radio" name="choices" id="option2">
+            <input type="radio" name="choices" id="option2" value={{ params.option2 }}>
             <label for="option2">{{ params.option2 }}</label><br>
-            <input type="radio" name="choices" id="option3">
+            <input type="radio" name="choices" id="option3" value={{ params.option3 }}>
             <label for="option3">{{ params.option3 }}</label><br>
-            <input type="radio" name="choices" id="option4">
+            <input type="radio" name="choices" id="option4" value={{ params.option4 }}>
             <label for="option4">{{ params.option4 }}</label><br>
             <input type="submit" value="vote">
         </form>     
