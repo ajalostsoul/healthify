@@ -1,4 +1,7 @@
 # healthify
+This Project was a hobby project which is a voting webapp. User will be shown Objective questions which he/she can vote and that vote will be stored in the database. 
+Setter will have the access to add/modify the questions and to see the responses.
+All the operations are session based.
 
 Note: Please dont mind my css because i havent used one (P.S i applied for backend dev post)<br>
 
